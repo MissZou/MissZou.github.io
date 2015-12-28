@@ -59,14 +59,12 @@ window.onload = function() {
                 return data.list.reduce(function(promise, item) {
                     return promise
                         .then(prepend)
-                        .then(sleep(1000))
                         .then(function() {
                             return getImg(item.url);
                         })
                         .then(addImg);
                 }, Promise.resolve());
             })
-            .then(sleep(300))
             .then(function() {
                 $('#done').show();
             });
