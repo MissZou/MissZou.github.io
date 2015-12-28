@@ -51,7 +51,7 @@ function getData(json) {
 
 function sleep(ms) {
     return function(v) {
-        var p = Promise();
+        var p = new Promise();
 
         setTimeout(function() {
             p.resolve(v);
