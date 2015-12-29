@@ -4,7 +4,7 @@ function getImg(url) {
          img.src = url;
     var p = new Promise(function(resolve,reject){
         img.onload = function() {
-        resolve();
+        resolve(this);
     }
     img.onerror = function(err) {
         reject(err);
