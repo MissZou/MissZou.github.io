@@ -1,8 +1,17 @@
 // for browser
 function getImg(url) {
-    var img = new Image();
-    img.src = url;
-    return img;
+        var img = new Image();
+         img.src = url;
+    var p = new Promise(function(resolve,reject){
+        img.onload = function() {
+        resolve();
+    }
+    img.onerror = function(err) {
+        reject(err);
+    }
+    });
+
+    return p;
 };
 
 
